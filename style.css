@@ -1,0 +1,964 @@
+/******************************************************************
+Theme Name: Grant Burke Manip
+Theme URI: http://www.themble.com/bones
+Description: This site was built using the Bones Development Theme. For more information about Bones or to view documentation, you can visit the <a href="https://github.com/eddiemachado/bones/issues" title="Bones Issues">Bones Issues</a> page on Github. You'll want to customize this for your clients with your own information.
+Author: Andrea Ibarra
+Author URI: http://www.andreaibarra.net
+Version: 1.7
+Tags: fluid-layout, responsive-layout, accessibility-ready, translation-ready, microformats, rtl-language-support
+
+License: WTFPL
+License URI: http://sam.zoy.org/wtfpl/
+Are You Serious? Yes.
+
+
+MAKE SURE TO READ BELOW BEFORE GETTING STARTED FOR THE FIRST TIME!
+------------------------------------------------------------------
+
+You may be thinking…
+
+WHOA, WHOA, WHOA…WHAT HAPPENED HERE?
+
+But before you freak out, let me take a few minutes to explain.
+
+Bones now uses Sass by default. If you prefer using regular CSS,
+then feel free to modify this theme how you like and keep a copy
+as your own personal starting point.
+
+DON'T DISMISS IT JUST YET THOUGH, USING Sass ISN'T AS COMPLICATED AS YOU THINK.
+
+It does take a few minutes to wrap your head around, but it will all
+be worth it. Need a quick intro? Here are a few quick reads:
+
+http://simplebits.com/notebook/2013/11/13/sass-book/ (BUY THIS)
+http://cognition.happycog.com/article/preprocess-this
+http://viget.com/inspire/sass-a-designers-perspective
+http://ianstormtaylor.com/oocss-plus-sass-is-the-best-way-to-css/
+http://css-tricks.com/sass-style-guide/
+http://net.tutsplus.com/tutorials/html-css-techniques/developing-with-sass-and-chrome-devtools/
+
+I would HIGHLY RECOMMEND, if you are going to be working with Sass, that you work locally.
+The browsers don't understand Sass and compiling it on the server takes a bit
+of a setup.
+
+That being said, here are a few MUST HAVE TOOLS for working with a
+pre-processor: (You really only need one of them)
+
+CodeKit: (Highly Recommended)
+http://incident57.com/codekit/
+
+Compass App: (Windows / Mac Users)
+http://compass.handlino.com/
+
+These applications compile Sass into valid CSS. This
+way you can keep your production files easy to read and your
+CSS minified and speedy. Simply set the output to the
+library/css folder and you are all set. It's a thing of beauty.
+
+You can also setup auto compiling with Grunt or using Terminal on
+OSX. It's a bit complicated to setup so if you aren't familiar
+with it, just get one of the automated applications.
+
+---------------------------------------------------------------
+
+Remember, once you download Bones it's up to you how to use it,
+so go nuts. Set things up and develop in a way that's easiest for
+you. If using Sass is still a bit confusing for you, then remove it
+and customize this template as you see fit.
+
+If you're a bit uneasy about using Sass or just want a familiar setup,
+take a few minutes and think about how much better a developer you
+can become by just TRYING out new technologies. It may be tough at
+first but it WILL make you a better developer. TRUST ME ON THIS. Give
+it a week, maybe two, and you will never go back.
+
+If you STILL can't get on board and want to jump ship, that's cool.
+Bones is not for everyone and that's ok, I mean I'm not hurt by it,
+whatever, I never liked you anyway. Here are some other alternatives
+if you're looking for a blank starter theme. I'll just be here waiting
+by the window, in case you ever decide to come back.
+
+http://roots.io/starter-theme (way more complex but has a ton of cool features)
+http://html5reset.org (super clean and great markup)
+https://github.com/viewportindustries/starkers (not sure if it's still active, but still good)
+
+That's it. It's time to jump in and get your hands dirty.
+Seriously, why are you still reading this? Get to work!
+If you have any issues or problems, you can create an issue on github
+or find me on Twitter: @eddiemachado (SHAMELESS PLUG!).
+
+Happy Developing!
+
+(When you're done, you may want to remove all this nonsense before
+passing it along to your client.)
+
+******************************************************************/
+
+/*
+WordPress Probz
+So Theme Check (http://wordpress.org/plugins/theme-check/)
+is constantly telling me that it needs these classes in the CSS even
+though they are in the REAL stylesheet in library/css/style.css.
+So we're gonna drop these here to keep it happy.
+Great work, Theme Check (eye roll)
+*/
+
+.sticky {}          /* DO NOT EDIT THIS */
+.gallery-caption {} /* THESE ARE USELESS */
+.bypostauthor {}    /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+  background-color: #21211f;
+border-color: #337ab7;
+}
+a:focus, a:hover {
+  color: #09af88;
+text-decoration: none!important;
+background-color: transparent!important;
+}
+
+body {
+font-family: 'Oxygen', sans-serif;
+background-color: white;
+padding: 0;
+margin: 0;
+}
+.container-fluid.no-pad {
+padding: 0px;
+}
+h2 {
+font-size: 24px;
+color: grey;
+font-family: serif;
+}
+h3 {
+font-size: 16px;
+}
+h4, h5 {
+padding-top: 20px;
+padding-bottom: 20px;
+}
+a {
+color: white;
+transition: 0.15s;
+}
+a:hover {
+color: #09AF88;
+text-decoration: none;
+transition: 0.15s
+}
+.current-menu-item {
+color: #09af88;
+}
+.current-menu-item a {
+color: #09af88;
+}
+
+/*LAYOUT*/
+#top-bar {
+background-color: #21211f;
+padding-top: 18px;
+padding-bottom: 9px;
+color: rgb(5, 94, 74);
+border-bottom: rgb(5, 94, 74) 1px solid;
+font-size: 14px; 
+letter-spacing: .5 px;
+}
+#top-bar i {
+padding-right: 5px;
+}
+.top-bar-left a {
+color: rgb(5, 94, 74);
+padding-right: 15px;
+}
+.top-bar-left a:hover {
+text-decoration: underline;
+color: white;
+}
+.top-bar-right a {
+display: inline;
+padding:0 10px;
+color: rgb(5, 94, 74);
+font-size: 16px;
+}
+.top-bar-right a:hover {
+text-align: right;
+padding-right: 10px;
+color: #09AF88;
+font-size: 16px;
+}
+.top-bar-right ul {
+float: right;
+}
+.top-bar-right li {
+float: left;
+list-style: none;
+}
+.navbar {
+background-color: #21211f;
+color: white;
+font-weight: bold;
+padding: 30px 0;
+border-radius: 0;
+margin-bottom: 0;
+position: relative;
+transition: all 0.5s;
+z-index: 1;
+}
+
+.shrink {
+padding: 20px 0;
+}
+
+.navbar-right {
+padding-top: 10px;
+}
+.navbar li {
+text-transform: uppercase;
+}
+.navbar-collapse .nav.navbar-nav.navbar-right > li > a:hover {
+background-color: #21211f;
+}
+.dropdown-menu {
+background-color: #09af88;
+border-radius: 0px;
+}
+.dropdown-menu > li > a {
+color: #21211f;
+text-decoration: none;
+background-color: #09af88;
+margin: 0;
+text-transform: uppercase;
+}
+.dropdown-menu > li > a:hover {
+color: white;
+text-decoration: none;
+background-color: #09af88;
+}
+.divider {
+ border: #21211f 0.7px solid;
+}
+.navbar-header .navbar-toggle .icon-bar {
+ background-color: white;
+}
+
+
+#main {
+background-color: #21211f;
+padding-top: 50px;
+padding-bottom: 80px;
+}
+#main h3 {
+line-height: 1.6;
+font-size: 24px;
+font-weight: bold;
+color: white;
+padding-bottom: 20px;
+}
+.about-text {
+line-height: 1.8;
+color: white;
+padding-top: 26px;
+}
+.btn {
+border-color: #09AF88;
+color: #09AF88;
+background-color: transparent;
+border-width: 2px;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 20px;
+padding-right: 20px;
+font-size: 14px;
+font-weight: bold;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+.btn:hover {
+color: white;
+border-color: #09AF88;
+background-color: #09AF88 !important;
+}
+#skills {
+background-color: #09AF88;
+color: white;
+text-align: center;
+padding-top: 100px;
+padding-bottom: 75px;
+}
+
+#skills h4 {
+text-transform: uppercase;
+}
+h5 {
+font-weight: bold;
+}
+
+.fa-lightbulb {
+font-size: 100px;
+}
+.fa-cubes {
+font-size: 100px;
+}
+.fa-pencil-alt {
+font-size: 100px;
+}
+.imageGrid {
+line-height: 0;
+}
+
+.tile {
+  max-width: 100%;
+  min-height: 343px;
+  height: auto;
+  line-height: 1.2;
+  display: inline-block;
+  vertical-align: top;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .tile {
+    width: 100%;
+  }
+}
+
+
+#projects .image {
+  display: block;
+  width: 25%;
+  height: auto;
+}
+#projects .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+  color: white;
+}
+#projects a:hover .overlay {
+  opacity: 0.4;
+}
+#projects .overlay:hover .text {
+  opacity: 1.0 !important;
+  }
+#projects .text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+#projects @media screen and (max-width: 768px) {
+  .image {
+    width: 100%;
+  }
+}
+
+#blog-posts {
+background-color: white;
+padding-top: 40px;
+padding-bottom: 70px;
+}
+
+#blog-posts hr {
+width: 100px;
+margin-top: 20px;
+border-top: 1px solid #09AF88;
+border-bottom: 1px solid #09AF88;
+color: white;
+height: 4px;
+}
+
+.row {
+padding-top: 30px;
+}
+
+img {
+max-width: 100%;
+margin-bottom: 20px;
+padding: 0;
+}
+
+img:hover {
+opacity: 0.7;
+}
+
+h3 {
+font-size: 20px;
+padding-bottom: 15px;
+}
+
+h3 > a {
+color: grey;
+}
+
+li {
+list-style: none;
+padding-left: 0px;
+}
+
+p {
+line-height: 2.0;
+}
+
+@media screen and (max-width: 768px) {
+  .col-xs-6 {
+    width: 100%;
+  }
+}
+}
+#get-started {
+color: white;
+background: #525252;
+padding-top: 35px;
+padding-bottom: 35px;
+font-size: 28px;
+}
+#explore {
+color: white;
+background-color: #21211f;
+font-size: 14px;
+padding-bottom: 40px;
+letter-spacing: 1.5px;
+
+h5 {
+line-height: 1.5;
+letter-spacing: 3px;
+font-size: 12px;
+text-transform: uppercase;
+}
+span {
+font-size: 20px;
+}
+a {
+padding-right: 10px;
+}
+ul {
+font-size: 12px;
+list-style: none;
+padding-left: 0px;
+color: white;
+}
+}
+.explore-text {
+font-size: 12px;
+line-height: 2.0;
+}
+.availability {
+line-height: 2.0;
+margin-right: 100px;
+}
+
+#footer {
+background-color: red;
+color: #09AF88;
+padding-top: 10px;
+padding-bottom: 10px;
+position: relative;
+} 
+.copyright {
+font-size: 12px;
+color: rgb(5, 94, 74);
+}
+
+/* PORTFOLIO */
+
+#portfolio-grid {
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+float: left;
+width: 25%;
+}
+
+.row {
+padding: 80px 115px 60px 145px;
+margin-right: 0;
+margin-left: 0;
+}
+img {
+padding-bottom: 10px;
+}
+/* Clear floats after image containers */
+.row::after {
+content: "";
+clear: both;
+display: table;
+}
+ /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (min-width: 768px) {
+.column {
+  width: 50%;
+}
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 768px) {
+.column {
+  width: 100%;
+}
+}
+}
+
+/* PROJECT PAGE */
+#project-page {
+  padding-top: 40px;
+img {
+  width: 100%;
+  padding: 0 5px 20px 0;
+}
+hr {
+  width: 50px;
+    margin-top: 20px;
+    border-top: 1px solid #09AF88;
+  border-bottom: 1px solid #09AF88;
+  color: white;
+  height: 4px;
+}
+.col-lg-4 {
+  background-color: #ededed;
+  padding: 30px;
+  line-height: 2.0;
+}
+h2 {
+  color: grey;
+}
+h3 {
+  color: #09af88;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 5px 0;
+}
+
+}
+/* ABOUT ME */
+#about-me {
+background: white;
+padding: 80px 0;
+
+img {
+width: 100%;
+padding: 25px 0 40px;
+}
+
+hr {
+width: 100px;
+margin-top: 20px;
+border-top: 1px solid #09AF88;
+border-bottom: 1px solid #09AF88;
+color: white;
+height: 4px;
+}
+
+p {
+line-height: 2.0;
+font-size: 14px;
+padding-top: 5px;
+}
+
+h3 {
+text-transform: uppercase;
+color: #09AF88;
+padding-top: 20px;
+letter-spacing: 2px;
+}
+
+li {
+margin-left: -25px;
+line-height: 2.0;
+}
+
+i {
+padding-right: 5px;
+}
+@media screen and (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+}
+}
+
+/* FAQ SECTION */
+#faq {
+background: white;
+padding: 20px 0;
+
+h3 {
+text-transform: uppercase;
+color: #09AF88;
+padding-top: 20px;
+letter-spacing: 2px;
+}
+a {
+color: grey;
+}
+a:hover {
+text-decoration: underline;
+color: #09AF88;
+}
+h5 a {
+text-transform: uppercase;
+}
+.col-sm-4 hr{
+width: 100px;
+margin-top: 20px;
+border-top: 1px solid #09AF88;
+border-bottom: 1px solid #09AF88;
+color: white;
+height: 4px;
+}
+#Q1:visited {
+transition: 2.0s;
+}
+@media screen and (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+  h2 {
+    padding-top: 20px;
+  }
+}
+}
+
+/* CONTACT PAGE */
+#title-banner {
+background-color: #09AF88;
+color: white;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+#contact-section {
+background-color: white;
+padding-top: 30px;
+padding-bottom: 30px;
+
+hr {
+width: 100px;
+margin-top: 20px;
+border-top: 1px solid #09AF88;
+border-bottom: 1px solid #09AF88;
+color: white;
+height: 4px;
+}
+
+p {
+padding: 15px 0;
+}
+
+h3 {
+color: #09AF88;
+letter-spacing: 2px;
+}
+
+div {
+padding-bottom: 10px;
+}
+
+.submit {
+text-transform: uppercase;
+font-size: 12px;
+font-weight: normal;
+color: white;
+background: #09af88;
+padding: 10px 10px;
+}
+
+i {
+  color: grey;
+  padding-top: 10px;
+  padding-right: 20px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+  h2 {
+    padding-top: 20px;
+  }
+}
+}
+
+.form-control {
+background-color: #eee;
+border-radius: 0px;
+border-color: #ddd;
+font-size: 14px;
+}
+option {
+font-weight: normal;
+display: block;
+white-space: pre;
+min-height: 1.2em;
+padding: 0px 2px 1px;
+}
+.message {
+padding-top: 10px;
+}
+
+/* BLOG PAGE */
+#posts {
+background: white;
+color: grey;
+font-size: 13px;
+
+.container {
+padding-top: 40px;
+padding-bottom: 40px;
+}
+.col-sm-9 {
+padding-right: 40px;
+}
+.col-sm-9 hr {
+margin: 40px 0;
+}
+img {
+width: 100%;
+border: 1px #ddd solid;
+}
+a img:hover {
+opacity: 0.7;
+}
+a {
+color: grey;
+}
+a:hover {
+color: black;
+}
+i {
+padding-right: 10px;
+}
+p {
+color: black;
+line-height: 2.0;
+}
+span {
+padding-right: 10px;
+}
+h2 {
+padding-bottom: 10px;
+}
+h3 {
+color: black;
+text-transform: uppercase;
+letter-spacing: 2px;
+font-size: 16px;
+font-weight: bold;
+}
+p {
+padding-bottom: 2px;
+}
+.submit {
+letter-spacing: 2px;
+text-transform: uppercase;
+font-size: 12px;
+font-weight: normal;
+color: white;
+background: #09af88;
+padding: 7px 12px;
+}	
+.submit a {
+color: white; 
+}
+ul {
+list-style: none;
+padding-left: 0px;
+}
+ul {
+padding-top: 5px;
+padding-bottom: 5px;
+}
+@media screen and (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+}
+}
+#sidebar-search {
+padding: 5px 0;
+width: 100%;
+
+:focus {
+outline: transparent none 0px;	
+}
+}
+.col-sm-3 form:focus {
+outline-color: none;
+}
+
+/* SHOP */
+
+#products .container {
+padding-top: 50px;
+padding-bottom: 50px;
+}
+#products .row {
+text-align: center;
+padding-top: 20px;
+padding-bottom: 40px;
+}
+#products .col-sm-3 {
+text-align: center;
+padding-left: 0;
+padding-right: 5px;
+margin: 0;
+}
+#products img {
+width: 100%;
+}
+#products img:hover {
+opacity: 0.7;
+}
+#products a {
+color: #09AF88;
+}
+#products a:hover {
+color: black;
+}
+#products h3 {
+text-align: center;
+}
+#products h4 {
+text-align: center;
+}	
+#products .btn {
+color: white;
+background-color: #09AF88;
+padding: 0 10px;
+letter-spacing: 1px;
+}	
+#products .btn:hover {
+color: white;
+}	
+
+/*PRODUCT*/
+#product-info .container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+#product-info img {
+  width: 100%;
+}
+#product-info h2 {
+  color: black;
+}
+#product-info h3 {
+  color: #09af88;
+}
+#product-info h5 a {
+  color: black;
+}
+#product-info h5 a:hover {
+  text-decoration: underline;
+  color: #09af88;
+}
+#product-info h6 {
+  color: #09af88;
+}
+#product-info p {
+  line-height: 2.0;
+}
+#product-info li {
+  line-height: 2.0;
+  margin-left: -10px;
+}
+#product-info .btn {
+  color: white;
+  background-color: #09AF88;
+  padding: 0 10px;
+  letter-spacing: 1px;
+}
+#product-info .btn:hover {
+  color: white;
+}
+#product-info .btn h6 {
+  color: white;
+}
+#product-info @media screen and (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/* SERVICES */
+
+#main-services {
+background-color: #21211f;
+padding-top: 50px;
+padding-bottom: 80px;
+
+ hr {
+width: 100px;
+margin-top: 20px;
+border-top: 1px solid #09AF88;
+border-bottom: 1px solid #09AF88;
+color: white;
+height: 4px;
+}
+h3 {
+line-height: 1.6;
+font-size: 24px;
+font-weight: bold;
+color: white;
+padding-bottom: 10px;
+}
+h4 {
+line-height: 1.5;
+color: white;
+}
+}
+#services-design {
+padding-top: 40px;
+padding-bottom: 40px;
+background: #09af88;
+
+h2,h3 {
+color: white;
+}
+h3 {
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+p {
+line-height: 2.0;
+font-size: 14px;
+}
+li {
+color: black;
+list-style: none;
+line-height: 2.0;
+}
+i {
+color: white;
+padding-left: 45px;
+}
+ul a {
+color: black;
+text-decoration: underline;
+}
+ul a:hover {
+color: white;
+text-decoration: none;
+}
+}
+
+.navbar-nav {
+ display: none!important;
+
+@media (min-width: 992px) {
+  display: block!important;
+}
+}
